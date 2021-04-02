@@ -4,7 +4,7 @@ import Header from '../src/components/header'
 function App() {
   return (
     <div className="App">
-     <Header/>
+     <Header title="Hooks Study"/>
     </div>
   );
 }
