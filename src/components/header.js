@@ -12,6 +12,7 @@ const Header=(props)=>{
        .catch(err=>{
            console.log(err)
        })
+       return ()=>{console.log('Clean Up Work In useEffect')}
     })
     function countHandler(){
         setCount(count+1);
