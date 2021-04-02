@@ -15,6 +15,10 @@ const Header=(props)=>{
        return ()=>{console.log('Clean Up Work In useEffect')}
     },[])
     // [] means it render onece not agian when dom changes
+    useEffect(()=>{
+        console.log("2nd UseEffect")
+        return alert("Cleaned")
+    })
     function countHandler(){
         setCount(count+1);
     }
