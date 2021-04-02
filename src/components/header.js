@@ -1,11 +1,17 @@
 import React ,{createContext, useEffect, useState} from "react"
 import India from '../components/India/india'
 import axios from 'axios'
+// context api created here outside of function
 const ForPune=createContext();
 
+//header component
 const Header=(props)=>{
+    // value for pune component which send through context api from india to pune
    const noticeFromIndia="Stay Safe And Wear Mask";
+   // use state for count increment
     const [count,setCount]=useState(0)
+    // useEffect for rendering http request when document render and 
+    //it render once because [] this at the end 
     useEffect(()=>{
         document.title = `You clicked ${count} times`;
        console.log(count)
@@ -23,6 +29,7 @@ const Header=(props)=>{
         console.log("2nd UseEffect")
         return console.log("2nd Cleanup")
     })
+    // for updating count
     function countHandler(){
         setCount(count+1);
     }
@@ -39,4 +46,4 @@ const Header=(props)=>{
     )
 }
 export default Header;
-export {ForPune};
+export {ForPune}; // for exporting context api

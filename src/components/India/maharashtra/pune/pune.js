@@ -3,7 +3,7 @@ import {ForPune} from '../../../header'
 const Pune=()=>{
     return(
     <>
-    <ForPune.Consumer>
+    <ForPune.Consumer> 
         {(pune)=>{
             return  <p>{pune}</p>
         }}
