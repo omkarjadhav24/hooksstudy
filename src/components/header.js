@@ -1,8 +1,12 @@
-import React ,{useState} from "react"
+import React ,{useEffect, useState} from "react"
 const Header=(props)=>{
     const [count,setCount]=useState(0)
+    useEffect(()=>{
+        document.title = `You clicked ${count} times`;
+       console.log(count)
+    })
     function countHandler(){
-        setCount("Hello");
+        setCount(count+1);
     }
     return(
         <>
