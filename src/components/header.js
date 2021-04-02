@@ -2,7 +2,7 @@ import React ,{useState} from "react"
 const Header=()=>{
     const [count,setCount]=useState(0)
     function countHandler(){
-        setCount(count+1);
+        setCount("Hello");
     }
     return(
         <>
