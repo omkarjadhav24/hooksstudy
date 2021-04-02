@@ -1,6 +1,10 @@
-import React ,{useEffect, useState} from "react"
+import React ,{createContext, useEffect, useState} from "react"
+import India from '../components/India/india'
 import axios from 'axios'
+const ForPune=createContext();
+
 const Header=(props)=>{
+   const noticeFromIndia="Stay Safe And Wear Mask";
     const [count,setCount]=useState(0)
     useEffect(()=>{
         document.title = `You clicked ${count} times`;
@@ -17,18 +21,22 @@ const Header=(props)=>{
     // [] means it render onece not agian when dom changes
     useEffect(()=>{
         console.log("2nd UseEffect")
-        return alert("Cleaned")
+        return console.log("2nd Cleanup")
     })
     function countHandler(){
         setCount(count+1);
     }
     return(
         <>
+          <ForPune.Provider value={noticeFromIndia}>
+            <India/>
+        </ForPune.Provider>
         <h1>{props.title}</h1>
         <p>You clicked button {count} times</p>
         <button onClick={()=>{countHandler()}} >Count</button>
-        
+      
         </>
     )
 }
 export default Header;
+export {ForPune};
